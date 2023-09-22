@@ -1,0 +1,8 @@
+void main() {
+
+}
+
+class WildCardGeneric{
+  
+  
+}

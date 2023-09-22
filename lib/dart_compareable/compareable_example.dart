@@ -5,7 +5,7 @@ class Student implements Comparable<Student> {
   @override
   int compareTo(Student other) {
     // TODO: implement compareTo
-    return this.age.compareTo(other.age);
+    return this.name.compareTo(other.name);
   }
 }
 
@@ -14,6 +14,7 @@ void main(List<String> args) {
     Student("Abir", 23),
     Student("Jahid", 45),
     Student("Ikramul", 10),
+    Student("Hasan", 78),
     Student("Hasan", 78),
     Student("Badal", 28)
   ];

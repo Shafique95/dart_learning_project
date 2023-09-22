@@ -1,5 +1,3 @@
-import 'dart:js_interop';
-
 class Slot<T> {
   insert(T shape) {}
   @override
@@ -44,7 +42,6 @@ abstract class CalculateSum<T extends num> {
   T calculateSum<T>(List<T> listVal);
 }
 
-
 void main(List<String> args) {
   commonFunction(45, 6);
   commonFunction<String, int>("Bangladesh", 65);
@@ -54,4 +51,32 @@ void main(List<String> args) {
   GenericClassDemmo<String> gnm = GenericClassDemmo<String>();
   gnm.setValu("Shafiqul Islam");
   print(gnm.t);
+  Common common = Common(67);
+  common.getDouble();
+  BanglaClass<String> banglaClass = BanglaClass("4", "9");
+
+  Common<int> c = ChildOfBangla(4, 4, 8);
+  print(c.runtimeType);
+}
+
+class Common<T> {
+  final T? t;
+  Common(this.t);
+
+  T? getDouble() {
+    print("we are doing the work$t");
+    return t;
+  }
+}
+
+class BanglaClass<T> extends Common<T> {
+  final T? x;
+  BanglaClass(this.x, m) : super(m);
+}
+
+class ChildOfBangla<T> extends BanglaClass<T> {
+  final T? m;
+  ChildOfBangla(this.m, T? name, T? age) : super(name, age) {
+    print("supper body");
+  }
 }
