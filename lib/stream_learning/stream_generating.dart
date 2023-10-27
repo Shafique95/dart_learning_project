@@ -4,6 +4,14 @@ void main() async {
   var result = await sumOfStream(generateStream());
   print(result);
   print("programme end");
+  void printElement(int element) {
+  print(element);
+}
+
+var list = [1, 2, 3];
+
+// Pass printElement as a parameter.
+list.forEach(printElement);
 }
 
   Future<int> sumOfStream(Stream<int> stream) async {
